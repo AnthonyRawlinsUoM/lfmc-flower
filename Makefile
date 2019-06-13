@@ -1,8 +1,8 @@
 all: build install pull
 	
 stack:
-	@docker build --tag=127.0.0.1:5000/lfmc-flower .
-	@docker push 127.0.0.1:5000/lfmc-flower
+	@docker build --tag=anthonyrawlinsuom/lfmc-flower .
+	@docker push anthonyrawlinsuom/lfmc-flower
 		
 build:
 	@docker build --tag=anthonyrawlinsuom/lfmc-flower .

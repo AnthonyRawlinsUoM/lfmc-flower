@@ -30,6 +30,8 @@ RUN pip install git+https://github.com/mher/flower.git
 RUN mkdir -p /data
 RUN groupadd -g 1000 dockergroup
 RUN useradd -r -u 1000 -g 1000 dockeruser
+COPY ~/.netrc /home/dockeruser/.netrc
+RUN chown dockeruser:dockergroup /home/dockeruser/.netrc
 USER 1000
 
 ENV TZ Australia/Melbourne
