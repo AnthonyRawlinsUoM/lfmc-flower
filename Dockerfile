@@ -31,6 +31,8 @@ RUN mkdir -p /data
 RUN groupadd -g 1000 dockergroup
 RUN useradd -r -u 1000 -g 1000 dockeruser
 COPY netrc /home/dockeruser/.netrc
+RUN mkdir /home/dockeruser/.dask/
+RUN chown -R dockeruser:dockergroup /home/dockeruser/.dask/
 RUN chown dockeruser:dockergroup /home/dockeruser/.netrc
 USER 1000
 
